@@ -14,4 +14,5 @@
 //= require jquery
 //= require tinymce-jquery
 //= require turbolinks
+//= require rails.validations
 //= require_tree .
