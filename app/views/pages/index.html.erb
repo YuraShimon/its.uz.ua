@@ -1,6 +1,8 @@
 <h1>Pages#index</h1>
 <p>Find me in app/views/pages/index.html.erb</p>
-
-
-<%= text_area_tag :content, "", :class => "tinymce", :rows => 40, :cols => 120 %>
-<%= tinymce %>
+<% @posts.each do |post| %>
+    <%= render 'posts/post', post:post %>
+<%end%>
+<% @courses.each do |course| %>
+    <%= render 'courses/course', course:course %>
+<%end%>

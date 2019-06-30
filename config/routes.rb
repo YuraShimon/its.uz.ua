@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   resources :userparams
   resources :posts
+  resources :courses
 end

@@ -1,0 +1,5 @@
+<div class="border" style=" outline: 1px groove #010;">
+	<h3><%=link_to post.title, post_path(post.id) %></h3>
+	<p><%= sanitize post.body %></p>
+	<small> <time><%= post.created_at.to_date.strftime("%d %B, %Y") %></time> </small>
+</div>

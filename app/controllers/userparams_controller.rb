@@ -4,14 +4,14 @@ class UserparamsController < ApplicationController
 
 	def index
 	    if @userparam.nil?
-	    	edirect_to new_userparam_path
+	    	redirect_to new_userparam_path
 	    else
 	        redirect_to userparam_path(@userparam.id)
 	    end
 	end
 
 	def show
-		 @user = Userparam.find(current_user.id)
+		 @user = Userparam.find(current_user.userparam.id)
 	end
 
 	def new
@@ -19,8 +19,9 @@ class UserparamsController < ApplicationController
 	end
 
 	def create
-		params[:userparam][:user_id]=current_user.id
-		@userparam=Userparam.create(userparam_params)
+		#params[:userparam][:user_id]=current_user.id
+		#@userparam=Userparam.create(userparam_params)
+		@userparam = current_user.build_userparam(userparams_params)
 		if @userparam.save
 			redirect_to userparam_path(@userparam.id)
 		else
@@ -33,7 +34,7 @@ class UserparamsController < ApplicationController
 	end
 
 	def update
-		@userparam.update(userparam_params)
+		@userparam.update(userparams_params)
 		redirect_to userparam_path(@userparam.id)
 	end
 
@@ -44,7 +45,7 @@ class UserparamsController < ApplicationController
 
 	private 
 
-	def userparam_params
+	def userparams_params
 		params.require(:userparam).permit(:user_id, :firstname, :lastname, :phone, :country, :city, :age)
 	end
 

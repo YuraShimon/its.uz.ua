@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show,:edit,:update,:destroy]
+  before_action :get_post, only: [:show,:edit,:update,:destroy]
   
   def new
   @post = Post.new
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   
     end
 
-    def set_post
+    def get_post
       @post = Post.find(params[:id])
     end
 end

@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_one :userparam, dependent: :destroy
   has_many :posts
-
+  has_many :courses
 end
