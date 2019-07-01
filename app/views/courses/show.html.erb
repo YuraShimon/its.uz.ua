@@ -1,11 +1,11 @@
 <div class="main main_height">
   <div class="container my-container ">
     	<div class="content">
-    	<h1 align="center"><%= sanitize @course.title %></h1>
+    	<h1 align="center"><%= @course.title %></h1>
 			<div class="col-md-12" style="text-align: justify;">
 				<p><%= sanitize @course.body%></p>
-				<p><%= @course.start%></p>
-				<p><%= @course.finish%></p>
+				<p> Початок: <%= @course.start%></p>
+				<p> Завершення: <%= @course.finish%></p>
 			</div>
 		
 

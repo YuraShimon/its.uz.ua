@@ -7,11 +7,11 @@ class PostsController < ApplicationController
   end 
 
   def index
-    if @post.nil?
-      redirect_to new_post_path
-    else
-      redirect_to post_path(@post.id)
-    end
+    
+
+    @posts = Post.all
+    #if @posts.any? 
+    
   end
 
   def show

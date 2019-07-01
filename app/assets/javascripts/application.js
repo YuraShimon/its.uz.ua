@@ -15,4 +15,6 @@
 //= require tinymce-jquery
 //= require turbolinks
 //= require rails.validations
+//= require popper
+//= require bootstrap-sprockets
 //= require_tree .
