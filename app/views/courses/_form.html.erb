@@ -1,0 +1,35 @@
+<%= form_for @course do |f| %>
+
+<div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :shortbody %>
+  <%= f.text_area :shortbody, :class => "tinymce", :rows => 5, :cols => 120 %>
+ <%= tinymce %><br/>
+</div>
+
+<div class="form-group">
+  <%= f.label :body %>
+  <%= f.text_area :body, :class => "tinymce", :rows => 40, :cols => 120 %>
+ <%= tinymce %><br/>
+</div>
+
+<div class="col-md-3">
+   <%= f.label :start %>
+   <%= f.text_field :start, class: 'form-control', type: 'date', placeholder: 'date'  %>
+</div>
+
+<div class="col-md-3">
+   <%= f.label :finish %>
+   <%= f.text_field :finish, class: 'form-control', type: 'date', placeholder: 'date'  %>
+</div>
+
+<div class="form-group">
+   <%= f.submit 'Зберегти', class: 'btn btn-primary' %>
+     <%= link_to 'Назад', :back, class: 'btn btn-outline-secondary'%>
+</div>
+
+<% end %>

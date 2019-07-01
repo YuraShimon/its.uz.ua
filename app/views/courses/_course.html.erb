@@ -1,0 +1,6 @@
+<div class="border" style=" outline: 1px groove #010;">
+	<h3><%=link_to course.title, course_path(course.id) %></h3>
+	<p><%= sanitize course.shortbody %></p>
+	<p><%= course.start %></p>
+	<p><%= course.finish %></p>
+</div>
